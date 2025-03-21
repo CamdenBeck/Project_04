@@ -193,12 +193,12 @@ class Main():
 
         # Display the prediction result
         if prediction <= 0.5:
-            result = "It is not likely that you have diabetes."
+            result = "It is not likely that you have diabetes"
         else:
-            result = "It may be likely that you have diabetes."
+            result = "It may be likely that you have diabetes"
 
         # Update the result label with the prediction
-        self.result_label.configure(text=f"Prediction: {result}({prediction[0][0]:.4f})")  
+        self.result_label.configure(text=f"Prediction: {result}({prediction[0][0]:.4f}).")  
 
         # Add a disclaimer label
         disclaimer = """
