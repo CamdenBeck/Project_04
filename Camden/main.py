@@ -131,6 +131,18 @@ class Main():
         self.result_label = ctk.CTkLabel(self.frame, text="Prediction will appear here", font=("Arial", 16))
         self.result_label.grid(row=23, column=1, columnspan=2, padx=20, pady=20)
 
+        # Add a disclaimer label
+        self.disclaimer = """
+        This is a machine learning model and not at all meant 
+        to be used for a medical diagnosis.
+        It is only meant for educational purposes and should not 
+        be used as a substitute for professional medical advice.
+        Always consult a healthcare professional for any medical concerns.
+        """
+        self.disclaimer_label = ctk.CTkLabel(self.frame, text=self.disclaimer, font=("Arial", 12))
+        self.disclaimer_label.grid(row=24, column=1, columnspan=2, padx=20, pady=5)
+
+
     def submit_data(self):
         # Collect data from the entry fields
         data = {
@@ -199,17 +211,6 @@ class Main():
 
         # Update the result label with the prediction
         self.result_label.configure(text=f"Prediction: {result}({prediction[0][0]:.4f}).")  
-
-        # Add a disclaimer label
-        disclaimer = """
-        This is a machine learning model and not at all meant 
-        to be used for a medical diagnosis.
-        It is only meant for educational purposes and should not 
-        be used as a substitute for professional medical advice.
-        Always consult a healthcare professional for any medical concerns.
-        """
-        disclaimer_label = ctk.CTkLabel(self.frame, text=disclaimer, font=("Arial", 12))
-        disclaimer_label.grid(row=24, column=1, columnspan=2, padx=20, pady=5)
 
 if __name__ == '__main__':
     app = Main()
