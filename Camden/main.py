@@ -9,7 +9,7 @@ class Main():
         self.tk = ctk.CTk()
         self.tk.geometry("1000x600")
         self.tk.title("Machine Learning Diabetes Prediction")
-        self.tk.resizable(True, False)
+        self.tk.resizable(False, False)
 
         # Set the appearance mode and scaling
         ctk.set_appearance_mode("System")  # Modes: "System", "Dark", "Light"
@@ -30,14 +30,14 @@ class Main():
         self.model_label = ctk.CTkLabel(self.frame, text="Select Model:")
         self.model = ctk.CTkComboBox(self.frame, values=ml_models, width=200)
 
-        self.model_label.grid(row=0, column=2, padx=20, pady=20)
-        self.model.grid(row=0, column=3, padx=20, pady=20)
+        self.model_label.grid(row=0, column=2, padx=10, pady=20)
+        self.model.grid(row=0, column=3, padx=10, pady=20)
 
         # Add Message Box fields for user direction
         self.highBP_msg = ctk.CTkLabel(self.frame, text='High Blood Pressure (0/1):', width=100)
         self.highCol_msg = ctk.CTkLabel(self.frame, text='High Cholesterol (0/1):', width=100, height=50)
         self.cholCheck_msg = ctk.CTkLabel(self.frame, text='Cholesterol Check (0/1):', width=100, height=50)
-        self.bmi_msg = ctk.CTkLabel(self.frame, text='BMI (0-50):', width=100, height=50)
+        self.bmi_msg = ctk.CTkLabel(self.frame, text='BMI (0-100):', width=100, height=50)
         self.smoker_msg = ctk.CTkLabel(self.frame, text='Smoker (0/1):', width=100, height=50)
         self.stroke_msg = ctk.CTkLabel(self.frame, text='Stroke (0/1):', width=100, height=50)
         self.heartDiseaseorAttack_msg = ctk.CTkLabel(self.frame, text='Heart Disease or Attack (0/1):', width=100, height=50)
@@ -135,8 +135,9 @@ class Main():
         self.disclaimer = """
         This is a machine learning model and not at all meant 
         to be used for a medical diagnosis.
-        It is only meant for educational purposes and should not 
-        be used as a substitute for professional medical advice.
+        It is only meant for educational purposes to showcase
+        machine learning and should not be used as a substitute 
+        for professional medical advice.
         Always consult a healthcare professional for any medical concerns.
         """
         self.disclaimer_label = ctk.CTkLabel(self.frame, text=self.disclaimer, font=("Arial", 12))
@@ -210,7 +211,7 @@ class Main():
             result = "It may be likely that you have diabetes"
 
         # Update the result label with the prediction
-        self.result_label.configure(text=f"Prediction: {result}({prediction[0][0]:.4f}).")  
+        self.result_label.configure(text=f"Prediction: {result} ({prediction[0][0]:.4f}).")  
 
 if __name__ == '__main__':
     app = Main()
