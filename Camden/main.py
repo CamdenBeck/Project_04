@@ -22,13 +22,14 @@ class Main():
         self.label = ctk.CTkLabel(self.frame, text="Enter info below:", font=("Arial", 24))
         self.label.grid(row=0, column=0, padx=20, pady=20)
 
-        # Get a list of machine learning models from the 'Models' directory
-        ml_models = [f for f in os.listdir('Models') if f.endswith('.h5')]
-        ml_models = [model.replace('.h5', '') for model in ml_models]  # Remove the '.h5' extension
+        # Set the machine learning model
+        ml_model = "Models/neural_network.h5"
 
-        # Create a combobox for selecting the model
-        self.model_label = ctk.CTkLabel(self.frame, text="Select Model:")
-        self.model = ctk.CTkComboBox(self.frame, values=ml_models, width=200)
+        # Create an entry for selecting the model
+        self.model_label = ctk.CTkLabel(self.frame, text="Machine Learning Model:")
+        self.model = ctk.CTkEntry(self.frame, width=200)
+        self.model.insert(0, ml_model)  # Set the default model
+        self.model.configure(state="readonly")
 
         self.model_label.grid(row=0, column=2, padx=10, pady=20)
         self.model.grid(row=0, column=3, padx=10, pady=20)
@@ -52,7 +53,7 @@ class Main():
         self.physHlth_msg = ctk.CTkLabel(self.frame, text='Physical Health (0-30):', width=100, height=50)
         self.diffWalk_msg = ctk.CTkLabel(self.frame, text='Difficulty Walking (0/1):', width=100, height=50)
         self.gender_msg = ctk.CTkLabel(self.frame, text='Gender (0 for female/1 for male):', width=100, height=50)
-        self.age_msg = ctk.CTkLabel(self.frame, text='Age (0-100):', width=100, height=50)
+        self.age_msg = ctk.CTkLabel(self.frame, text='Age (0-13):', width=100, height=50)
         self.education_msg = ctk.CTkLabel(self.frame, text='Education (0-16):', width=100, height=50)
         self.income_msg = ctk.CTkLabel(self.frame, text='Income (0-10):', width=100, height=50)
 
@@ -173,7 +174,7 @@ class Main():
         # Here you would typically process the data, e.g., pass it to a machine learning model
         # Run the model prediction using the collected data
         # Load the selected model
-        model_path = os.path.join('Models', data["Model"] + '.h5')
+        model_path = os.path.join(data["Model"])
         model = tf.keras.models.load_model(model_path)
 
         # Prepare the input data for the model
