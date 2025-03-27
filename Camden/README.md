@@ -1,6 +1,7 @@
 # Project_04: Harnessing Machine Learning for Proactive Diabetes Risk Prediction
 
 [![Python Version](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 <!-- Add other relevant badges if applicable -->
 
 ## Table of Contents
@@ -200,6 +201,10 @@ These are machine learning models developed for educational and research purpose
 *   Alex Gerwer
 *   Sylvester Gold
 *   Sarah Gutierrez
+
+## License
+
+This project is licensed under the MIT License.
 
 ## Acknowledgements
 
