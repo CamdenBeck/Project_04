@@ -148,8 +148,8 @@ To set up the environment and run this project locally:
 ### Training the Models
 
 1.  Open the Jupyter Notebook: `Project_04_Diabetes_Prediction.ipynb`.
-2.  Execute the cells sequentially to perform data loading, preprocessing, EDA, feature engineering, model training, tuning, and evaluation.
-3.  **Warning:** Training and hyperparameter tuning (especially GridSearchCV and Keras Tuner) can be computationally intensive and time-consuming, particularly on standard hardware. Running on platforms like Google Colab with GPU/TPU acceleration (for Neural Networks) is recommended for faster execution.
+2.  Execute the cells sequentially in Google Colab to perform data loading, preprocessing, EDA, feature engineering, model training, tuning, and evaluation.
+3.  **Warning:** Training and hyperparameter tuning (especially GridSearchCV and Keras Tuner) can be computationally intensive and time-consuming, particularly on standard hardware. Running on platforms like Google Colab with GPU/TPU acceleration (for Neural Networks) is recommended for faster execution. In our experience, it took hours to run the notebook. There is a pretrained model located in the `Models` directory if you choose to use that.
 
 ### Using Pre-trained Models (`main.py`)
 
